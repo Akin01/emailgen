@@ -17,20 +17,20 @@ jobs:
         include:
           - os: ubuntu-latest
             target: x86_64-unknown-linux-gnu
-            artifact_name: emailgen
-            asset_name: emailgen-linux-x86_64
+            artifact_name: mailgen
+            asset_name: mailgen-linux-x86_64
           - os: windows-latest
             target: x86_64-pc-windows-msvc
-            artifact_name: emailgen.exe
-            asset_name: emailgen-windows-x86_64
+            artifact_name: mailgen.exe
+            asset_name: mailgen-windows-x86_64
           - os: macos-latest
             target: x86_64-apple-darwin
-            artifact_name: emailgen
-            asset_name: emailgen-macos-x86_64
+            artifact_name: mailgen
+            asset_name: mailgen-macos-x86_64
           - os: macos-latest
             target: aarch64-apple-darwin
-            artifact_name: emailgen
-            asset_name: emailgen-macos-aarch64
+            artifact_name: mailgen
+            asset_name: mailgen-macos-aarch64
 
     steps:
       - uses: actions/checkout@v4
