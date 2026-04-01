@@ -1,4 +1,4 @@
-# emailgen Installation Script for Windows
+# mailgen Installation Script for Windows
 # Usage: Invoke-WebRequest -Uri https://raw.githubusercontent.com/akin01/emailgen/main/install.ps1 -OutFile install.ps1; .\install.ps1
 # Or: powershell -ExecutionPolicy Bypass -Command "Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/akin01/emailgen/main/install.ps1')"
 
@@ -9,11 +9,11 @@ param(
 
 $ErrorActionPreference = "Stop"
 
-# emailgen Installation Script for Windows
+# mailgen Installation Script for Windows
 $REPO = "akin01/emailgen"
-$BINARY_NAME = "emailgen.exe"
+$BINARY_NAME = "mailgen.exe"
 
-Write-Host "=== emailgen Windows Installer ===" -ForegroundColor Cyan
+Write-Host "=== mailgen Windows Installer ===" -ForegroundColor Cyan
 
 # Detect Architecture
 $ARCH = $env:PROCESSOR_ARCHITECTURE
@@ -40,11 +40,11 @@ if (-not (Test-Path $InstallDir)) {
     New-Item -ItemType Directory -Force -Path $InstallDir | Out-Null
 }
 
-# Check if emailgen is already installed
+# Check if mailgen is already installed
 $ExistingBinary = Join-Path $InstallDir $BINARY_NAME
 if (Test-Path $ExistingBinary) {
     if (-not $Force) {
-        Write-Host "Warning: emailgen is already installed at $ExistingBinary" -ForegroundColor Yellow
+        Write-Host "Warning: mailgen is already installed at $ExistingBinary" -ForegroundColor Yellow
         Write-Host "Use -Force to overwrite existing installation." -ForegroundColor Yellow
         $response = Read-Host "Do you want to overwrite? [y/N]"
         if ($response -ne "y" -and $response -ne "Y") {
@@ -67,12 +67,12 @@ try {
     exit 1
 }
 
-$ASSET_NAME = "emailgen-windows-$ARCH.zip"
+$ASSET_NAME = "mailgen-windows-$ARCH.zip"
 $DOWNLOAD_URL = "https://github.com/$REPO/releases/download/v$VERSION/$ASSET_NAME"
 
-Write-Host "Downloading emailgen $VERSION for Windows-$ARCH..." -ForegroundColor Cyan
+Write-Host "Downloading mailgen $VERSION for Windows-$ARCH..." -ForegroundColor Cyan
 
-$TEMP_DIR = [System.IO.Path]::GetTempPath() + "emailgen-install-" + [System.Guid]::NewGuid().ToString()
+$TEMP_DIR = [System.IO.Path]::GetTempPath() + "mailgen-install-" + [System.Guid]::NewGuid().ToString()
 New-Item -ItemType Directory -Force -Path $TEMP_DIR | Out-Null
 
 try {
@@ -93,7 +93,7 @@ try {
     $ExtractedBinary = Get-ChildItem -Path $TEMP_DIR -Filter $BINARY_NAME -Recurse | Select-Object -First 1
     
     if (-not $ExtractedBinary) {
-        Write-Host "Error: Could not find emailgen.exe in the downloaded archive" -ForegroundColor Red
+        Write-Host "Error: Could not find mailgen.exe in the downloaded archive" -ForegroundColor Red
         exit 1
     }
     
@@ -114,7 +114,7 @@ try {
     $PATH = [Environment]::GetEnvironmentVariable("Path", "User")
     if ($PATH -notlike "*$InstallDir*") {
         Write-Host "`nWarning: $InstallDir is not in your PATH" -ForegroundColor Yellow
-        Write-Host "To use emailgen from anywhere, add this directory to your PATH:" -ForegroundColor Yellow
+        Write-Host "To use mailgen from anywhere, add this directory to your PATH:" -ForegroundColor Yellow
         Write-Host "  [Environment]::SetEnvironmentVariable('Path', `$env:Path + ';$InstallDir', 'User')" -ForegroundColor Yellow
         Write-Host "`nOr restart your terminal after adding it manually." -ForegroundColor Yellow
         
@@ -123,7 +123,7 @@ try {
             try {
                 $NewPath = $PATH + ";$InstallDir"
                 [Environment]::SetEnvironmentVariable("Path", $NewPath, "User")
-                Write-Host "Added to PATH! Please restart your terminal to use emailgen." -ForegroundColor Green
+                Write-Host "Added to PATH! Please restart your terminal to use mailgen." -ForegroundColor Green
                 $env:Path = [Environment]::GetEnvironmentVariable("Path", "User")
             } catch {
                 Write-Host "Error: Failed to update PATH" -ForegroundColor Red
@@ -132,13 +132,13 @@ try {
         }
     }
     
-    # Try to run emailgen --version if PATH was updated or already available
+    # Try to run mailgen --version if PATH was updated or already available
     if ($PATH -like "*$InstallDir*" -or $env:Path -like "*$InstallDir*") {
         Write-Host "`nVerifying installation..." -ForegroundColor Cyan
         try {
-            & emailgen --version
+            & mailgen --version
         } catch {
-            Write-Host "Note: Run 'emailgen --help' to get started!" -ForegroundColor Yellow
+            Write-Host "Note: Run 'mailgen --help' to get started!" -ForegroundColor Yellow
         }
     } else {
         Write-Host "`nTo verify installation, run:" -ForegroundColor Cyan
@@ -147,8 +147,8 @@ try {
     
     Write-Host "`n=== Installation Complete ===" -ForegroundColor Green
     Write-Host "Quick start:" -ForegroundColor Cyan
-    Write-Host "  emailgen --count 1000 --output emails.txt  # Generate 1000 emails" -ForegroundColor White
-    Write-Host "  emailgen --help                             # Show all options" -ForegroundColor White
+    Write-Host "  mailgen --count 1000 --output emails.txt  # Generate 1000 emails" -ForegroundColor White
+    Write-Host "  mailgen --help                             # Show all options" -ForegroundColor White
     
 } catch {
     Write-Host "`nError: Installation failed" -ForegroundColor Red

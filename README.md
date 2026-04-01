@@ -146,7 +146,7 @@ mailgen -c 1000000 --fast
 
 ```
 USAGE:
-    emailgen [OPTIONS]
+    mailgen [OPTIONS]
 
 OPTIONS:
     -c, --count <COUNT>            Number of emails to generate [default: 1000]
