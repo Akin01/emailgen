@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.1] - 2026-04-01
+
+### Fixed
+- **Release workflow**: Fixed binary packaging in GitHub Actions release workflow
+  - Changed artifact names from `emailgen` to `mailgen` across all platforms
+  - Linux: `mailgen-linux-x86_64.tar.gz`
+  - Windows: `mailgen-windows-x86_64.zip`
+  - macOS x86_64: `mailgen-macos-x86_64.tar.gz`
+  - macOS aarch64: `mailgen-macos-aarch64.tar.gz`
+
+### Changed
+- Package rename from `emailgen` to `mailgen` across all registries
+  - Cargo: `mailgen`
+  - NPM: `@akin01/mailgen`
+  - PyPI: `mailgen-rs`
+  - Binary: `mailgen`
+
+### CI/CD
+- Release workflow now correctly packages `mailgen` binary
+- All 17 tests passing (9 unit + 8 doc tests)
+- Rust formatting checks passing
+
 ## [0.1.0] - 2026-04-01
 
 ### Added
