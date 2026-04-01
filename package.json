@@ -1,0 +1,39 @@
+{
+  "name": "@akin01/emailgen",
+  "version": "0.1.0",
+  "description": "High-performance email generator using Markov chains and Bloom filters",
+  "main": "index.js",
+  "bin": {
+    "emailgen": "bin/emailgen.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "node scripts/install.js"
+  },
+  "files": [
+    "bin/",
+    "scripts/",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akin01/emailgen.git"
+  },
+  "keywords": [
+    "email",
+    "generator",
+    "markov",
+    "bloom-filter",
+    "cli"
+  ],
+  "author": "Akin <akinpasha82@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akin01/emailgen/issues"
+  },
+  "homepage": "https://github.com/akin01/emailgen#readme",
+  "engines": {
+    "node": ">=12"
+  }
+}

@@ -1,0 +1,17 @@
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "emailgen-rs"
+version = "0.1.0"
+description = "High-performance email generator using Markov chains and Bloom filters"
+authors = [{ name = "Akin", email = "akinpasha82@gmail.com" }]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.7"
+keywords = ["email", "generator", "markov", "bloom-filter"]
+classifiers = [
+    "Programming Language :: Rust",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
