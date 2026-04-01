@@ -4,7 +4,7 @@ build-backend = "maturin"
 
 [project]
 name = "mailgen-rs"
-version = "0.1.1"
+version = "0.1.2"
 description = "High-performance email generator using Markov chains and Bloom filters"
 authors = [{ name = "Akin", email = "akinpasha82@gmail.com" }]
 license = { text = "MIT" }

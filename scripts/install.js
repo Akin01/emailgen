@@ -5,7 +5,7 @@ const https = require('https');
 const { execSync } = require('child_process');
 
 const REPO = "akin01/emailgen";
-const BIN_NAME = os.platform() === 'win32' ? 'emailgen.exe' : 'emailgen';
+const BIN_NAME = os.platform() === 'win32' ? 'mailgen.exe' : 'mailgen';
 const DEST_DIR = path.join(__dirname, '..', 'bin');
 
 if (!fs.existsSync(DEST_DIR)) {
@@ -17,14 +17,14 @@ const getPlatformAsset = () => {
     const arch = os.arch();
 
     if (platform === 'darwin') {
-        if (arch === 'arm64') return `emailgen-macos-aarch64.tar.gz`;
-        if (arch === 'x64') return `emailgen-macos-x86_64.tar.gz`;
+        if (arch === 'arm64') return `mailgen-macos-aarch64.tar.gz`;
+        if (arch === 'x64') return `mailgen-macos-x86_64.tar.gz`;
     }
     if (platform === 'linux') {
-        if (arch === 'x64') return `emailgen-linux-x86_64.tar.gz`;
+        if (arch === 'x64') return `mailgen-linux-x86_64.tar.gz`;
     }
     if (platform === 'win32') {
-        if (arch === 'x64') return `emailgen-windows-x86_64.zip`;
+        if (arch === 'x64') return `mailgen-windows-x86_64.zip`;
     }
 
     throw new Error(`Unsupported platform/architecture: ${platform}/${arch}`);
@@ -92,7 +92,7 @@ const install = async () => {
             fs.chmodSync(path.join(DEST_DIR, BIN_NAME), 0o755);
         }
 
-        console.log(`Successfully installed emailgen!`);
+        console.log(`Successfully installed mailgen!`);
         fs.unlinkSync(tempPath);
     } catch (err) {
         console.error(`Error during installation: ${err.message}`);
