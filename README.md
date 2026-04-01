@@ -31,6 +31,24 @@ powershell -ExecutionPolicy Bypass -Command "iwr -useb https://raw.githubusercon
 Invoke-WebRequest -Uri https://raw.githubusercontent.com/akin01/emailgen/main/install.ps1 -UseBasicParsing | Invoke-Expression
 ```
 
+### Package Manager Installation
+
+Install the published CLI globally with either `npm` or `uv`:
+
+```bash
+# npm
+npm install -g @akin01/mailgen
+
+# uv
+uv tool install mailgen-rs
+```
+
+Then verify the installation:
+
+```bash
+mailgen --version
+```
+
 ### Build from Source
 
 ## Quick Start
@@ -114,7 +132,7 @@ See [PERFORMANCE.md](PERFORMANCE.md) for detailed benchmarks.
 
 ### Direct Command Line
 
-After installing via the script, `uv`, or `npm`, the `mailgen` command is available directly in your terminal:
+After installing via the script or a package manager, the `mailgen` command is available directly in your terminal:
 
 ```bash
 # Basic usage
