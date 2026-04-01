@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.3] - 2026-04-01
+
+### Fixed
+- **Release workflow**: Removed `--locked` flag issue by updating Cargo.lock with all target dependencies
+- **NPM install script**: Fixed to download `mailgen` binaries instead of `emailgen`
+  - Install script now correctly downloads mailgen binaries for all platforms
+
+### Changed
+- Version bump: 0.1.2 → 0.1.3 across all registries
+  - Cargo: mailgen 0.1.3
+  - NPM: @akin01/mailgen 0.1.3
+  - PyPI: mailgen-rs 0.1.3
+
+### CI/CD
+- Cargo.lock updated with all cross-compilation target dependencies
+- Release workflow uses --locked flag for reproducible builds
+- All 17 tests passing (9 unit + 8 doc tests)
+
+## [0.1.2] - 2026-04-01
+
+### Fixed
+- **NPM install script**: Fixed to download `mailgen` binaries instead of `emailgen`
+  - Updated asset names in scripts/install.js
+  - Binary name: emailgen → mailgen
+  - Asset names updated for all platforms
+
 ## [0.1.1] - 2026-04-01
 
 ### Fixed
