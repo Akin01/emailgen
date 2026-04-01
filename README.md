@@ -1,4 +1,4 @@
-# emailgen
+# mailgen
 
 High-performance email generator using Markov chains and Bloom filters.
 
@@ -39,13 +39,13 @@ Invoke-WebRequest -Uri https://raw.githubusercontent.com/akin01/emailgen/main/in
 
 ```bash
 # Generate 1000 emails to stdout
-./target/release/emailgen --count 1000
+./target/release/mailgen --count 1000
 
 # Generate 1 million emails to file (Fast Mode)
-./target/release/emailgen --count 1000000 --output emails.txt --fast
+./target/release/mailgen --count 1000000 --output emails.txt --fast
 
 # Use custom wordlists
-./target/release/emailgen --count 10000 \
+./target/release/mailgen --count 10000 \
     --names data/example_names.txt \
     --domains data/example_domains.txt \
     --output emails.txt
@@ -61,7 +61,7 @@ emailgen = { git = "https://github.com/akin01/emailgen" }
 ```
 
 ```rust
-use emailgen::EmailGenerator;
+use mailgen::EmailGenerator;
 
 fn main() {
     // Basic usage
@@ -99,13 +99,13 @@ fn main() {
 
 ```bash
 # Fast mode for bulk generation (~250K emails/sec)
-./target/release/emailgen --count 1000000 --output emails.txt --fast
+./target/release/mailgen --count 1000000 --output emails.txt --fast
 
 # Default mode with 30% Markov for variety (~2.6K emails/sec)
-./target/release/emailgen --count 100000 --output emails.txt
+./target/release/mailgen --count 100000 --output emails.txt
 
 # Generate to stdout
-./target/release/emailgen --count 1000 --fast
+./target/release/mailgen --count 1000 --fast
 ```
 
 See [PERFORMANCE.md](PERFORMANCE.md) for detailed benchmarks.
@@ -114,14 +114,14 @@ See [PERFORMANCE.md](PERFORMANCE.md) for detailed benchmarks.
 
 ### Direct Command Line
 
-After installing via the script, `uv`, or `npm`, the `emailgen` command is available directly in your terminal:
+After installing via the script, `uv`, or `npm`, the `mailgen` command is available directly in your terminal:
 
 ```bash
 # Basic usage
-emailgen --count 1000
+mailgen --count 1000
 
 # Fast mode
-emailgen -c 1000000 --fast
+mailgen -c 1000000 --fast
 ```
 
 ### Command Line Options
@@ -162,24 +162,24 @@ Control the balance between speed and variety:
 
 ```bash
 # Specify all three (must add up to 100)
-./target/release/emailgen --count 100000 --wordlist-percent 35 --cache-percent 35 --markov-percent 30
+./target/release/mailgen --count 100000 --wordlist-percent 35 --cache-percent 35 --markov-percent 30
 
 # Specify only one - others auto-calculated
-./target/release/emailgen --count 100000 --markov-percent 20
+./target/release/mailgen --count 100000 --markov-percent 20
 # Auto-calculates: 40% wordlist, 40% cached, 20% Markov
 
-./target/release/emailgen --count 100000 --wordlist-percent 80
+./target/release/mailgen --count 100000 --wordlist-percent 80
 # Auto-calculates: 80% wordlist, 15% cached, 5% Markov
 
-./target/release/emailgen --count 100000 --cache-percent 70
+./target/release/mailgen --count 100000 --cache-percent 70
 # Auto-calculates: 25% wordlist, 70% cached, 5% Markov
 
 # Specify two - third auto-calculated
-./target/release/emailgen --count 100000 --wordlist-percent 50 --markov-percent 10
+./target/release/mailgen --count 100000 --wordlist-percent 50 --markov-percent 10
 # Auto-calculates: 50% wordlist, 40% cached, 10% Markov
 
 # Fast mode shortcut (50% wordlist, 50% cached, 0% Markov)
-./target/release/emailgen --count 100000 --fast
+./target/release/mailgen --count 100000 --fast
 ```
 
 | Ratio (wordlist/cache/markov) | Speed | Variety | Use Case |
@@ -193,16 +193,16 @@ Control the balance between speed and variety:
 
 ```bash
 # Generate 10K emails with stats
-./target/release/emailgen -c 10000 --stats
+./target/release/mailgen -c 10000 --stats
 
 # Generate with custom wordlists
-./target/release/emailgen -c 100000 \
+./target/release/mailgen -c 100000 \
     -n names.txt \
     -d domains.txt \
     -o output.txt
 
 # Generate with specific constraints
-./target/release/emailgen -c 50000 \
+./target/release/mailgen -c 50000 \
     --min-length 6 \
     --max-length 20 \
     --capacity 100000 \

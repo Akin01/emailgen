@@ -1,5 +1,5 @@
 [package]
-name = "emailgen"
+name = "mailgen"
 version = "0.1.0"
 edition = "2021"
 authors = ["Akin <akinpasha82@gmail.com>"]
@@ -36,7 +36,7 @@ name = "generate_1m"
 path = "examples/generate_1m.rs"
 
 [[bin]]
-name = "emailgen"
+name = "mailgen"
 path = "src/main.rs"
 
 [profile.release]

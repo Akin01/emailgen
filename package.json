@@ -1,10 +1,10 @@
 {
-  "name": "@akin01/emailgen",
+  "name": "@akin01/mailgen",
   "version": "0.1.0",
   "description": "High-performance email generator using Markov chains and Bloom filters",
   "main": "index.js",
   "bin": {
-    "emailgen": "bin/emailgen.js"
+    "mailgen": "bin/mailgen.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

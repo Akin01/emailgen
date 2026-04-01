@@ -1,4 +1,4 @@
-//! # emailgen
+//! # mailgen
 //!
 //! High-performance email generator using Markov chains and Bloom filters.
 //!
@@ -11,7 +11,7 @@
 //! ## Quick Start
 //!
 //! ```rust,no_run
-//! use emailgen::EmailGenerator;
+//! use mailgen::EmailGenerator;
 //!
 //! let mut generator = EmailGenerator::new();
 //! let email = generator.generate();
@@ -21,7 +21,7 @@
 //! ## Generate Many Emails
 //!
 //! ```rust,no_run
-//! use emailgen::EmailGenerator;
+//! use mailgen::EmailGenerator;
 //!
 //! let mut generator = EmailGenerator::new();
 //! let emails = generator.generate_many(1000);
@@ -30,8 +30,8 @@
 //! ## Custom Names and Domains
 //!
 //! ```rust,no_run
-//! use emailgen::EmailGenerator;
-//! use emailgen::wordlist::{load_names, load_domains};
+//! use mailgen::EmailGenerator;
+//! use mailgen::wordlist::{load_names, load_domains};
 //!
 //! let names = load_names("data/names.txt").unwrap();
 //! let domains = load_domains("data/domains.txt").unwrap();
@@ -43,7 +43,7 @@
 //! ## Generate to File
 //!
 //! ```rust,no_run
-//! use emailgen::EmailGenerator;
+//! use mailgen::EmailGenerator;
 //!
 //! let mut generator = EmailGenerator::new();
 //! generator.generate_to_file(1_000_000, "emails.txt").unwrap();

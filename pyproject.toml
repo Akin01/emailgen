@@ -3,7 +3,7 @@ requires = ["maturin>=1.0,<2.0"]
 build-backend = "maturin"
 
 [project]
-name = "emailgen-rs"
+name = "mailgen-rs"
 version = "0.1.0"
 description = "High-performance email generator using Markov chains and Bloom filters"
 authors = [{ name = "Akin", email = "akinpasha82@gmail.com" }]
