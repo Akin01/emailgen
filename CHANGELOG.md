@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.5] - 2026-04-01
+
+### Fixed
+- **Binary distribution consistency**: Aligned all supported install paths on the `mailgen` executable name
+  - Shell installer now downloads and installs `mailgen`
+  - PowerShell installer now downloads and verifies `mailgen.exe`
+  - Helper scripts and CLI usage docs now reference `mailgen`
+
+### Changed
+- Version bump: 0.1.4 → 0.1.5 across all registries
+  - Cargo: mailgen 0.1.5
+  - NPM: @akin01/mailgen 0.1.5
+  - PyPI: mailgen-rs 0.1.5
+
 ## [0.1.4] - 2026-04-01
 
 ### Fixed

@@ -1,6 +1,6 @@
 [package]
 name = "mailgen"
-version = "0.1.4"
+version = "0.1.5"
 edition = "2021"
 authors = ["Akin <akinpasha82@gmail.com>"]
 description = "High-performance email generator using Markov chains and Bloom filters"
