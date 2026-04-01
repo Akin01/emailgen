@@ -5,11 +5,14 @@ const path = require('path');
 const os = require('os');
 const { spawnSync } = require('child_process');
 
-const binName = os.platform() === 'win32' ? 'emailgen.exe' : 'emailgen';
-const binPath = path.join(__dirname, binName);
+const primaryBinName = os.platform() === 'win32' ? 'mailgen.exe' : 'mailgen';
+const legacyBinName = os.platform() === 'win32' ? 'emailgen.exe' : 'emailgen';
+const primaryBinPath = path.join(__dirname, primaryBinName);
+const legacyBinPath = path.join(__dirname, legacyBinName);
+const binPath = fs.existsSync(primaryBinPath) ? primaryBinPath : legacyBinPath;
 
 if (!fs.existsSync(binPath)) {
-    console.error('emailgen binary not found. Please reinstall the package.');
+    console.error(`mailgen binary not found. Looked for ${primaryBinName} and ${legacyBinName}. Please reinstall the package.`);
     process.exit(1);
 }
 

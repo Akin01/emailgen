@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.4] - 2026-04-01
+
+### Fixed
+- **NPM launcher**: Fixed the global `mailgen` shim to execute the installed `mailgen` binary
+  - The wrapper now resolves `mailgen` and keeps a fallback to the legacy `emailgen` name
+  - Global installs via `vp i -g @akin01/mailgen` now run correctly after installation
+
+### Changed
+- Version bump: 0.1.3 → 0.1.4 across all registries
+  - Cargo: mailgen 0.1.4
+  - NPM: @akin01/mailgen 0.1.4
+  - PyPI: mailgen-rs 0.1.4
+
 ## [0.1.3] - 2026-04-01
 
 ### Fixed
