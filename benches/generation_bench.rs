@@ -3,7 +3,7 @@
 //! Run with: cargo bench
 
 use criterion::{black_box, criterion_group, criterion_main, Criterion, Throughput};
-use emailgen::{EmailBloomFilter, EmailGenerator};
+use mailgen::{EmailBloomFilter, EmailGenerator};
 
 /// Benchmark basic email generation
 fn bench_basic_generation(c: &mut Criterion) {
@@ -122,7 +122,7 @@ fn bench_memory_usage(c: &mut Criterion) {
 
 /// Benchmark pattern generation
 fn bench_pattern_generation(c: &mut Criterion) {
-    use emailgen::{EmailPattern, GeneratorConfig};
+    use mailgen::{EmailPattern, GeneratorConfig};
 
     let mut group = c.benchmark_group("pattern_generation");
 

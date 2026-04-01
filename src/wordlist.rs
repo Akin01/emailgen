@@ -17,7 +17,7 @@ use std::path::Path;
 ///
 /// # Example
 /// ```no_run
-/// use emailgen::wordlist::load_names;
+/// use mailgen::wordlist::load_names;
 ///
 /// let names = load_names("data/names.txt").unwrap();
 /// ```
@@ -45,7 +45,7 @@ pub fn load_names<P: AsRef<Path>>(path: P) -> Result<Vec<String>> {
 ///
 /// # Example
 /// ```no_run
-/// use emailgen::wordlist::load_domains;
+/// use mailgen::wordlist::load_domains;
 ///
 /// let domains = load_domains("data/domains.txt").unwrap();
 /// ```

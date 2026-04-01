@@ -3,15 +3,15 @@
 //! A high-performance email generator using Markov chains and Bloom filters.
 
 use clap::Parser;
-use emailgen::wordlist::{get_default_domains, get_default_names, load_domains, load_names};
-use emailgen::{EmailGenerator, EmailPattern, GeneratorConfig};
 use indicatif::{ProgressBar, ProgressStyle};
+use mailgen::wordlist::{get_default_domains, get_default_names, load_domains, load_names};
+use mailgen::{EmailGenerator, EmailPattern, GeneratorConfig};
 use std::io::{self, Write};
 use std::path::PathBuf;
 use std::sync::Arc;
 
 #[derive(Parser, Debug)]
-#[command(name = "emailgen")]
+#[command(name = "mailgen")]
 #[command(author = "Akin <akinpasha82@gmail.com>")]
 #[command(version = env!("CARGO_PKG_VERSION"))]
 #[command(about = "High-performance email generator using Markov chains and Bloom filters", long_about = None)]

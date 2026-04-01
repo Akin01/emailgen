@@ -5,8 +5,8 @@
 //!
 //! Run with: cargo run --example custom_wordlist
 
-use emailgen::wordlist::{load_domains, load_names};
-use emailgen::{EmailGenerator, EmailPattern, GeneratorConfig};
+use mailgen::wordlist::{load_domains, load_names};
+use mailgen::{EmailGenerator, EmailPattern, GeneratorConfig};
 use std::path::Path;
 
 fn main() {

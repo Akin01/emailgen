@@ -28,7 +28,7 @@ impl EmailBloomFilter {
     ///
     /// # Example
     /// ```
-    /// use emailgen::bloom::EmailBloomFilter;
+    /// use mailgen::bloom::EmailBloomFilter;
     ///
     /// // Create filter for 1 million emails with 1% false positive rate
     /// let filter = EmailBloomFilter::new(1_000_000, 0.01);
@@ -59,7 +59,7 @@ impl EmailBloomFilter {
     ///
     /// # Example
     /// ```
-    /// use emailgen::bloom::EmailBloomFilter;
+    /// use mailgen::bloom::EmailBloomFilter;
     ///
     /// let mut filter = EmailBloomFilter::new(1000, 0.01);
     /// assert!(!filter.contains("test@example.com"));

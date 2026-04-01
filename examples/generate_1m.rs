@@ -5,7 +5,7 @@
 //!
 //! Run with: cargo run --example generate_1m
 
-use emailgen::EmailGenerator;
+use mailgen::EmailGenerator;
 use std::fs::File;
 use std::io::{BufWriter, Write};
 use std::time::Instant;
